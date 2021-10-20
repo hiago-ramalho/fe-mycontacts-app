@@ -1,0 +1,17 @@
+# SOP -> Same Origin Policy(Política de mesma origem)
+  - é um mecanismo de segurança
+  - não permite que sites maliciosos não consigam executar scripts enquanto navegamos nele
+  - só existe dentro dos ambientes de navegadores
+  - só é aplicável quando fazemos requisições através do JavaScript e dentro de navegadores, e se a origem de onde a requisição está saindo, for a mesma de onde a requisição está chegando
+    > ex: saída-> http://localhost:3000
+          destino-> http://localhost:3000
+  - quando uma requisição fere a política de mesma origem, ela é bloqueada pelo navegador e passa a ser uma requisição do tipo CORS
+
+  - O que é Origem?
+      - é basicamente a URL(protocolo://dominio:porta)
+      - tudo que não for protocolo, dominio e porta, não é levado em conta na origem
+
+
+# CORS -> Cross-Origin Resource Sharing(Compartilhamento de recursos entre origens cruzadas/diferentes)
+  - é um mecanismo que flexibiliza a SOP
+  - precisamos definir dentro dos headers do backend, um novo header que confia/conhece a origem de saida da requisição
