@@ -27,9 +27,11 @@ export const InputSearchContainer = styled.div`
 
 export const Header = styled.header`
   display: flex;
-  justify-content: space-between;
+  justify-content: ${({ justifyContent }) => justifyContent};
   align-items: center;
   margin-top: 32px;
+  border-bottom: 2px solid ${({ theme }) => theme.colors.gray[100]};
+  padding-bottom: 16px;
 
   strong {
     color: #222;
@@ -51,6 +53,53 @@ export const Header = styled.header`
       background: ${({ theme }) => theme.colors.primary.main};
       color: #fff;
     }
+  }
+`;
+
+export const ErrorContiner = styled.div`
+  margin-top: 16px;
+
+  display: flex;
+  align-items: center;
+
+  .details {
+    margin-left: 24px;
+
+    strong {
+      font-size: 22px;
+      color: ${({ theme }) => theme.colors.danger.main};
+      display: block;
+      margin-bottom: 8px;
+    }
+  }
+`;
+
+export const EmptyListContainer = styled.div`
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  p {
+    margin-top: 8px;
+    text-align: center;
+    color: ${({ theme }) => theme.colors.gray[200]};
+
+    strong {
+      color: ${({ theme }) => theme.colors.primary.main};
+    }
+  }
+  `;
+
+export const SarchNotFoundContainer = styled.div`
+  margin-top: 16px;
+  display: flex;
+  align-items: flex-start;
+
+  span {
+    color: ${({ theme }) => theme.colors.gray[200]};
+    margin-left: 24px;
+    word-break: break-word;
   }
 `;
 
